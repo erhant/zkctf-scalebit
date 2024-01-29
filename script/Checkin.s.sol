@@ -14,6 +14,8 @@ contract Solve is Script {
     }
 
     function run() public {
+        // 1. npx circomkit compile checkin
+        // 2. npx circomkit prove checkin default
         uint256[24] memory proof = [
             0x25e946cb1e18e53ea483735fdf73a99b559e1f70788430642473e4990bff1e86,
             0x096be957466bcedd2ca7bcac40996e58a3431e6fd923bfd94f75ce2b6dcbc5b9,

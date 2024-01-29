@@ -1,23 +1,4 @@
 // SPDX-License-Identifier: GPL-3.0
-/*
-    Copyright 2021 0KIMS association.
-
-    This file is generated with [snarkJS](https://github.com/iden3/snarkjs).
-
-    snarkJS is a free software: you can redistribute it and/or modify it
-    under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    snarkJS is distributed in the hope that it will be useful, but WITHOUT
-    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-    or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
-    License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with snarkJS. If not, see <https://www.gnu.org/licenses/>.
-*/
-
 pragma solidity >=0.7.0 <0.9.0;
 
 contract CheckIn {
@@ -57,11 +38,6 @@ contract CheckIn {
     You should have received a copy of the GNU General Public License
     along with snarkJS. If not, see <https://www.gnu.org/licenses/>.
 */
-
-pragma solidity >=0.7.0 <0.9.0;
-
-// import "hardhat/console.sol";
-
 contract PlonkVerifier {
     // Omega
     uint256 constant w1 = 19540430494807482326159819597004422086093766032135589407132600596362845576832;
