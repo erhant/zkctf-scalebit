@@ -1,0 +1,14 @@
+{
+  "name": "checkin",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "author": "erhant <erhany96@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "solve:checkin": "source .env && forge script script/Checkin.s.sol:Solve --rpc-url $CHECKIN_RPC -vvv"
+  },
+  "dependencies": {
+    "circomkit": "^0.0.22"
+  }
+}
