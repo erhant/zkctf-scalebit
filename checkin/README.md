@@ -1,1 +1,0 @@
-# ZKCTF by Scalebit
