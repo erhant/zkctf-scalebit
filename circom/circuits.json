@@ -1,0 +1,10 @@
+{
+  "checkin": {
+    "file": "checkin",
+    "template": "Example"
+  },
+  "roundabout": {
+    "file": "roundabout",
+    "template": "Gift"
+  }
+}
