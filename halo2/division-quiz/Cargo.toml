@@ -1,0 +1,14 @@
+[package]
+name = "ctf"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+backtrace = { version = "0.3", optional = true }
+ff = "0.13"
+halo2_proofs = { git = "https://github.com/privacy-scaling-explorations/halo2.git", default-features = true }
+clap = "3.0"
+halo2curves = { version = "0.6.0", default-features = false }
+rand = "0.8"

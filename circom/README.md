@@ -1,4 +1,20 @@
-# 1. Checkin
+# ZKCTF by Scalebit - Circom Challenges
+
+When you click on a challenge, you are greeted with:
+
+- an RPC endpoint
+- a faucet link
+- a netcat `nc` command
+
+You can see further instruction when you enter the netcat command.
+
+> [!NOTE]
+>
+> When you get the deployer address, you can fund that address at the faucet.
+
+You will also need a solver account (preferably a throw-away) and you can fund that at the faucet as well.
+
+## 1. Checkin
 
 In my case, the `zkey` corresponded to a circuit with only 1 input and 1 output, although the given circuit code had 2 inputs. So I just removed one of the inputs and proved the circuit. I've used Circomkit.
 
@@ -12,7 +28,7 @@ npx circomkit calldata checkin default
 
 I paste that output into Solidity and we are done!
 
-# 4. Roundabout
+## 4. Roundabout
 
 MiMC has the following scheme:
 
