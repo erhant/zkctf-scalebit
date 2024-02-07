@@ -1,0 +1,22 @@
+{
+  "name": "checkin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "author": "erhant <erhany96@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "solve:checkin": "source .env && forge script script/Checkin.s.sol:Solve --rpc-url $CHECKIN_RPC -vvv --broadcast",
+    "solve:roundabout": "source .env && forge script script/Roundabout.s.sol:Solve --rpc-url $CHECKIN_RPC -vvv --broadcast",
+    "test": "jest",
+    "test:sol": "forge t"
+  },
+  "dependencies": {
+    "circomkit": "^0.0.22",
+    "circomlib": "^2.0.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

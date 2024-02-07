@@ -1,0 +1,18 @@
+{
+  "checkin": {
+    "file": "checkin",
+    "template": "Example"
+  },
+  "roundabout": {
+    "file": "roundabout",
+    "template": "Gift"
+  },
+  "challenge1": {
+    "file": "challenge",
+    "template": "Level1"
+  },
+  "challenge2": {
+    "file": "challenge",
+    "template": "Level2"
+  }
+}
