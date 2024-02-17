@@ -85,7 +85,7 @@ $$
 F_i(x_i, y_i) = (y_i, x_i + (y_i + k + c_i)^3)
 $$
 
-where $c_i$ are round constants, fixed during the instantiation of MiMC. With this in mind, we can check the [circuit itself](https://github.com/iden3/circomlib/blob/master/circuits/mimcsponge.circom#L275), and see two things:
+where $c_i$ are round constants, fixed during the instantiation of MiMC. With this in mind, we can check the [circuit itself](https://github.com/erhant/zkctf-scalebit/blob/main/circuits/roundabout.circom#L298), and see two things:
 
 - The circuit recommends 220 rounds (as indicated in a comment there) but we have two rounds, which means the first and last rounds have constant 0:
   - $c_{first} = c_0 = 0$
@@ -186,4 +186,43 @@ Use this calldata to verify your on-chain proof, check the script or test to see
 
 ### Familiar Strangers
 
-We have a several inequalities to solve here. In Level 1, we are expected to provide an input `x` such that:
+We have a several inequalities to solve here. This challenge had no contract, but instead a UI was prepared for us to submit the correct values. We describe how to compute them here:
+
+#### Level 1
+
+In Level 1, we are expected to provide an input `x` such that:
+
+- `x < 6026017665971213533282357846279359759458261226685473132380160` (within 201 bits)
+- `x > -401734511064747568885490523085290650630550748445698208825344` (within 201 bits)
+
+The `GreaterThan` uses `LessThan` within (see [here](https://circom.erhant.me/comparators/index.html#greaterthan)), which simply switches the places of the input. Also, lets just work with positive numbers as the negative number will be converted to a positive number within the field. The second inequality thus becomes:
+
+- `21888242871839274820511894680509706203057841315125383713147455740877599670273 < x`
+
+If we look at the number of bits of that huge number, we see that its 254 bits! However, the comparators in Level1 expect 201 bit numbers only. So how do we bypass that? If we look closely, the input to `Num2Bits` is actually `((1 << n) + in[0]) - in[1]` and the `Num2Bits` is instantiated with `n+1` bits.
+
+To return 1 from the `LessThan` template we have to make sure the `n`th bit of that operation is 0. We can actually just say `x = in[1] = in[0] + (1 << n)` which would make the whole thing 0. This gives us `x = 2812141577453232982198433661597034554413855239119887461777408` which is 201 bits! Thankfully, this also satisfies the first inequality, so we can solve Level1 with:
+
+$$
+\texttt{in} = 2812141577453232982198433661597034554413855239119887461777408
+$$
+
+#### Level 2
+
+In level 2, we again have two inequalities for an input `x` such that:
+
+- `3533700027045102098369050084895387317199177651876580346993442643999981568 > x` (within 241 bits)
+- `-3618502782768642773547390826438087570129142810943142283802299270005870559232 < x` (within 251 bits)
+
+Again, lets make all of these use `LessThan` and with no negative numbers.
+
+- `x < 3533700027045102098369050084895387317199177651876580346993442643999981568`
+- `18269740089070632448699014918819187518419221589472892059895904916569937936385 < x`
+
+Looking at the second inequality, we can follow the same approach as before to find by setting `x = in[1] = in[0] + (1 << n)` which gives us `x = 5897488333439202455083409550285544209858125342430750230241414742016`. Thankfully again, this number is 222 bits and satisfies the first inequality.
+
+The challenge also required the given number to have more than 70 digits, but this number has 67 digits. If we look closely to this check within the challenge judge code, we see that its just a simple string length check. We can just prepend some zeros to our answer to keep the value same, but make it look like more than 70 digits! With that, our answer is:
+
+$$
+\texttt{in} = 00005897488333439202455083409550285544209858125342430750230241414742016
+$$
