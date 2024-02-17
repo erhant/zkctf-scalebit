@@ -30,9 +30,9 @@ contract RoundaboutTest is Test {
             0x04a27fa40ceb42c943feaef8418ecee6df53754dc2e7411d58e5810c9eeb3a70,
             0x2e4698f73bc567ca482a798e50bd99bc2f81c48b28c5316c8947db72db8ae697
         ];
-        uint256[1] memory pubSignals = [uint256(0x00000000000000000000000000000000000000000000000000000000025d2f72)];
+        uint256[1] memory pubs = [uint256(0x00000000000000000000000000000000000000000000000000000000025d2f72)];
 
-        roundabout.verify(pA, pB, pC, pubSignals);
+        roundabout.verify(pA, pB, pC, pubs);
         assertTrue(roundabout.isSolved(), "flag not set!");
     }
 }

@@ -22,13 +22,11 @@ When you click on a challenge, you are greeted with:
 - a faucet link
 - a netcat `nc` command
 
-You can see further instruction when you enter the netcat command. You will also need a solver account (preferably a throw-away).
+You can see further instruction when you enter the netcat command. You will also need a solver account (preferably a throw-away). You will place your solver private key & RPC urls along with contract addresses under `.env` file, see [example here](./.env.example).
 
 > [!NOTE]
 >
 > When you get the deployer address, you can fund that address at the faucet, along with your throw-away solver address.
-
-See [example env](./.env.example) file for the Forge script setup.
 
 ## Tests
 
@@ -67,7 +65,11 @@ npx circomkit prove checkin
 npx circomkit calldata checkin
 ```
 
-Use this calldata to verify your on-chain proof, check the script or test to see how thats done.
+Use this calldata to verify your on-chain proof, check the script or test to see how thats done. You can submit the solution with:
+
+```sh
+source .env && forge script script/Checkin.s.sol:Solve --rpc-url $CHECKIN_RPC -vvv --broadcast
+```
 
 ### Roundabout
 
@@ -182,7 +184,11 @@ npx circomkit prove roundabout
 npx circomkit calldata roundabout
 ```
 
-Use this calldata to verify your on-chain proof, check the script or test to see how thats done.
+Use this calldata to verify your on-chain proof, check the script or test to see how thats done. You can submit the solution with:
+
+```sh
+source .env && forge script script/Roundabout.s.sol:Solve --rpc-url $ROUNDABOUT_RPC -vvv --broadcast
+```
 
 ### Familiar Strangers
 

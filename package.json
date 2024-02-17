@@ -6,7 +6,7 @@
   "author": "erhant",
   "scripts": {
     "solve:checkin": "source .env && forge script script/Checkin.s.sol:Solve --rpc-url $CHECKIN_RPC -vvv --broadcast",
-    "solve:roundabout": "source .env && forge script script/Roundabout.s.sol:Solve --rpc-url $CHECKIN_RPC -vvv --broadcast",
+    "solve:roundabout": "source .env && forge script script/Roundabout.s.sol:Solve --rpc-url $ROUNDABOUT_RPC -vvv --broadcast",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --forceExit --verbose",
     "test:sol": "forge t"
   },

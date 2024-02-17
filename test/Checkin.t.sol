@@ -30,9 +30,9 @@ contract CheckinTest is Test {
             0x1f9a989178159015a06ba6af4e8f6c95c4e464644a569fdd27f15250bb687047,
             0x07ba8e205a3193ccd5421703f1e47fff873c7446794fb2a8253a15b36d652f27
         ];
-        uint256[1] memory pubSignals = [uint256(0x0000000000000000000000000000000000000000000000000000000000000001)];
+        uint256[1] memory pubs = [uint256(0x0000000000000000000000000000000000000000000000000000000000000001)];
 
-        checkin.verify(pA, pB, pC, pubSignals);
+        checkin.verify(pA, pB, pC, pubs);
         assertTrue(checkin.isSolved(), "flag is not true.");
     }
 }
