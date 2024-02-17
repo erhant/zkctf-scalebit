@@ -33,8 +33,9 @@ You can see further instruction when you enter the netcat command. You will also
 Both circuit tests & contract tests are written:
 
 ```sh
-yarn  test # test circuits
-forge test # test contracts
+yarn test     # test everything
+yarn test:sol # test contracts
+yarn test:js  # test circuits
 ```
 
 ## Solutions
