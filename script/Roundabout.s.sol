@@ -36,7 +36,7 @@ contract Solve is Script {
         vm.startBroadcast(deployerPrivkey);
 
         roundabout.verify(pA, pB, pC, pubSignals);
-        require(roundabout.isSolved(), "flag is not true.");
+        require(roundabout.isSolved(), "not solved!");
 
         vm.stopBroadcast();
     }

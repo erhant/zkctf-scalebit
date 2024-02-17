@@ -1,5 +1,6 @@
 {
   "protocol": "groth16",
   "version": "2.1.6",
-  "optimization": 2
+  "optimization": 2,
+  "prettyCalldata": true
 }

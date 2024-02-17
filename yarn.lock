@@ -965,10 +965,10 @@ circom_tester@^0.0.19:
     tmp-promise "^3.0.3"
     util "^0.12.4"
 
-circomkit@^0.0.22:
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/circomkit/-/circomkit-0.0.22.tgz#0d1425fdece61972b002fd69a5b636515289c65a"
-  integrity sha512-rfNiDCBrg/c9JI4nbvpKa123eFyrBFHBHUUeJFjHpzuG7Zw3KMbIUs4dw9xoIeqtzLYL4Hs4jXTMKluStEMxKA==
+circomkit@^0.0.24:
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/circomkit/-/circomkit-0.0.24.tgz#11db0ba17da9f5bd3e58bc87d5b39bb8375e3bf8"
+  integrity sha512-lw5Kj6zAWS8NYZjlDCGEDeA1e0/Vpa6t6W3GT0AxfhswUoqK0Nu3sz5hu8ZQ+Efh0Ss3eLoD0y+9sOkySEwgEA==
   dependencies:
     chai "^4.3.7"
     circom_tester "^0.0.19"

@@ -14,9 +14,6 @@ contract Solve is Script {
     }
 
     function run() public {
-        // 1. npx circomkit compile checkin
-        // 2. npx circomkit prove checkin default
-        // 2. npx circomkit calldata checkin default
         uint256[2] memory pA = [
             0x29746be93e9b90b110137e927f104955e9774b58045aa905eb345a3b62d8fdb8,
             0x23734e1d2ea285ea11a13512b1012af5b6b9c1d92c4d660610c32c1d06dbe177
@@ -39,7 +36,7 @@ contract Solve is Script {
         vm.startBroadcast(deployerPrivkey);
 
         checkin.verify(pA, pB, pC, pubSignals);
-        require(checkin.isSolved(), "flag is not true.");
+        require(checkin.isSolved(), "not solved!");
 
         vm.stopBroadcast();
     }

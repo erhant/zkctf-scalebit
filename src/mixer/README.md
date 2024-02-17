@@ -1,5 +1,0 @@
-deployer private key
-0x403959a1969bd4aabe192682510d12107b38ad7e47db8f8f1a10ccceaedd17f4
-
-deployer addr
-0xA0BF93E424b0235867BC7Bd3E96702a9DC6D2470
